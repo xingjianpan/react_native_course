@@ -4,9 +4,5 @@ module.exports = {
         "react",
         "jsx-a11y",
         "import"
-    ]，
-    "semi": [
-        0,
-        "never"
-    ],
+    ]
 };
