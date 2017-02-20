@@ -37,4 +37,4 @@ const Header = (props) => {
 
 // Make the component available to toher parts of the app
 
-export default Header;
+export { Header };
