@@ -9,9 +9,11 @@ import AlbumList from './src/components/AlbumList';
 
 
 // Create a component
+
+// GOTCHA: use {flex:1} to enable scrolling
 const App = () => {
   return (
-    <View>
+    <View style={{ flex:1 }}>
       <Header headerText={'Albums!!!'} />
       <AlbumList />
     </View>
