@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
 import firebase from 'firebase';
 import AV from 'leancloud-storage';
 import { Header, Button, Spinner } from './components/common';
 import AlbumList from './components/AlbumList';
 import LoginForm from './components/LoginForm';
+import reducers from './reducers';
+import LibraryList from './components/Librarylist';
 
 
 const LC_APPID = 'YnPbzevdUJ5iIzvnMCXPqgRo-gzGzoHsz';
@@ -59,11 +63,15 @@ class App extends Component {
 
   render() {
     return (
-      <View style={{ flex: 1 }}>
-        <Header headerText={'Albums!!!'} />
-        {this.renderContent()}
-        <AlbumList />
-      </View>
+      <Provider store={createStore(reducers)}>
+        <View style={{ flex: 1 }}>
+          <Header headerText={'Tech Stack!'} />
+          {this.renderContent()}
+
+          <LibraryList />
+          <AlbumList />
+        </View>
+      </Provider>
     );
   }
 }
