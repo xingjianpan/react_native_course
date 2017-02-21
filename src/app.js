@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import { View } from 'react-native';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-import firebase from 'firebase';
-import AV from 'leancloud-storage';
+// import firebase from 'firebase';
+// import AV from 'leancloud-storage';
 import { Header, Button, Spinner } from './components/common';
 import AlbumList from './components/AlbumList';
-import LoginForm from './components/LoginForm';
+// import LoginForm from './components/LoginForm';
 import reducers from './reducers';
-import LibraryList from './components/Librarylist';
+import LibraryList from './components/LibraryList';
 
 
 const LC_APPID = 'YnPbzevdUJ5iIzvnMCXPqgRo-gzGzoHsz';
@@ -24,23 +24,23 @@ class App extends Component {
     };
   }
 
-  componentWillMount() {
-    firebase.initializeApp({
-      apiKey: 'AIzaSyB346_uWghszEeQuFDIGaHfoweJHJ2wHdo',
-      authDomain: 'reactnative-311d4.firebaseapp.com',
-      databaseURL: 'https://reactnative-311d4.firebaseio.com',
-      storageBucket: 'reactnative-311d4.appspot.com',
-      messagingSenderId: '973359486430',
-    });
+  // componentWillMount() {
+  //   firebase.initializeApp({
+  //     apiKey: 'AIzaSyB346_uWghszEeQuFDIGaHfoweJHJ2wHdo',
+  //     authDomain: 'reactnative-311d4.firebaseapp.com',
+  //     databaseURL: 'https://reactnative-311d4.firebaseio.com',
+  //     storageBucket: 'reactnative-311d4.appspot.com',
+  //     messagingSenderId: '973359486430',
+  //   });
 
-    firebase.auth().onAuthStateChanged((user) => {
-      if (user) {
-        this.setState({ loggedIn: true });
-      } else {
-        this.setState({ loggedIn: false });
-      }
-    });
-  }
+  //   firebase.auth().onAuthStateChanged((user) => {
+  //     if (user) {
+  //       this.setState({ loggedIn: true });
+  //     } else {
+  //       this.setState({ loggedIn: false });
+  //     }
+  //   });
+  // }
     // AV.init({
     //   appId: LC_APPID,
     //   appKey: LC_APPKEY,
@@ -66,10 +66,10 @@ class App extends Component {
       <Provider store={createStore(reducers)}>
         <View style={{ flex: 1 }}>
           <Header headerText={'Tech Stack!'} />
-          {this.renderContent()}
+
 
           <LibraryList />
-          <AlbumList />
+
         </View>
       </Provider>
     );

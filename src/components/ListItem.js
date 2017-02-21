@@ -30,18 +30,20 @@ class ListItem extends Component {
     const { titleStyle } = styles;
     const { id, title } = this.props.library;
 
-    <TouchableWithoutFeedback
-      onPress={() => this.props.selectLibrary(id)}
-    >
-      <View>
-        <CardSection>
-          <Text style={titleStyle}>
-            {title}
-          </Text>
-        </CardSection>
-        {this.renderDescription}
-      </View>
-    </TouchableWithoutFeedback>
+    return (
+      <TouchableWithoutFeedback
+        onPress={() => this.props.selectLibrary(id)}
+      >
+        <View>
+          <CardSection>
+            <Text style={titleStyle}>
+              {title}
+            </Text>
+          </CardSection>
+          {this.renderDescription}
+        </View>
+      </TouchableWithoutFeedback>
+    );
   }
 }
 
