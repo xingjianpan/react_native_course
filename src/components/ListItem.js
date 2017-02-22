@@ -30,6 +30,7 @@ class ListItem extends Component {
     const { titleStyle } = styles;
     const { id, title } = this.props.library;
 
+
     return (
       <TouchableWithoutFeedback
         onPress={() => this.props.selectLibrary(id)}
@@ -40,7 +41,7 @@ class ListItem extends Component {
               {title}
             </Text>
           </CardSection>
-          {this.renderDescription}
+          {this.renderDescription()}
         </View>
       </TouchableWithoutFeedback>
     );
