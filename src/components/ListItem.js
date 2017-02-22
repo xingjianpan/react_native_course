@@ -39,7 +39,7 @@ class ListItem extends Component {
             {title}
           </Text>
         </CardSection>
-        {this.renderDescription}
+        {this.renderDescription()}
       </View>
     </TouchableWithoutFeedback>
   }

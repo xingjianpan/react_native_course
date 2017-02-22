@@ -8,7 +8,7 @@ import { Header, Button, Spinner } from './components/common';
 import AlbumList from './components/AlbumList';
 import LoginForm from './components/LoginForm';
 import reducers from './reducers';
-import LibraryList from './components/Librarylist';
+import LibraryList from './components/LibraryList';
 
 
 const LC_APPID = 'YnPbzevdUJ5iIzvnMCXPqgRo-gzGzoHsz';
